@@ -1,21 +1,46 @@
-
-<html lang="en">
+<!DOCTYPE html>
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>4u Andini! HBD yaa!</title>
+    <title>Habedeeee ya cil♡</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <audio id="bg-music" src="The 1975 - About You.mp3"></audio>
-    <button id="play-music">Pencet Dulu</button>
-    <div class="sky">
-        <div class="star" data-message="You're amazing!"></div>
-        <div class="star" data-message="Keep shining!"></div>
-        <div class="star" data-message="You're loved!"></div>
+
+    <!-- Background Video -->
+    <video autoplay loop muted playsinline id="background-video">
+        <source src="galaxy.mp4" type="video/mp4">
+    </video>
+
+    <!-- Background Musik -->
+    <audio id="bg-music">
+        <source src="The 1975 - About You.mp3" type="audio/mp3">
+    </audio>
+
+    <div class="container">
+        <h1 class="title">💫Happy Birthday💫</h1>
+        <button id="play-music">Klik ini dulu, abistu klik bintang yg kiri yaa!</button>
     </div>
-    <div id="message-box"></div>
+
+    <!-- Langit malam dengan bintang -->
+    <div class="sky">
+        <div class="star" data-message="Haii bocill Barakallahu fi umrik!, selamat ulang tahun yg ke 18 yaa, yeee udah gak bocil lagi nih whahahwh, moga aja di usia yg agak lebih serius ini Allah selalu memberikan kesehatan, kebahagiaan dan kemudahan dalam setiap langkah mu yaa semangat.. oiya kmu kan lgi mau pengumuman snpb ya, semoga ke terima yaa. apapun hasilnya itu adalah yg terbaik dari allah. ttp semangat dan jgn pernah berhenti percaya pada dirimu sendiri yakk, habedeeeeee18181818 - lanjut klik yg tengah cil"></div>
+        <div class="star" data-message="Ehh ketemu lagi dong whahah, aku lupa deh mo ngasih tau.. semoga di umur 18 ini kalau ketemu aku ngga banyak diemnya lagi yaa hahah, aku lo ngga gigit... okeh cerewey aja udah cerewet hahaha ngga2 becanda, kurang2 in lah ya diemnya.. kmu lo lucu kalau banyak omong lwdbhhgbdhbwdhbahebdhabd  - lanjutt kanan terakhir cisss dulu cekrek" ></div>
+        <div class="star" data-message="oiya mo ngasih tau, aku bikin ini ntah apa lah yg ada dipikiran aku tiba2 aja pengen ngasih yg beda gitu, maap ya kalau cape pencet2 bintangnya trus heeheh, tpi urusan novel bisa di atur kok, (asal kesini hahaha), soalnya aku blum tau deh kapan ya aku bisa main ke maakassar huhuhu.. alaa pokoknya hbd ya maap kalau baru bisa ngasih ini :(((()))), ak kgn km tw" "></div>
+    </div>
+
+    <!-- Kotak pesan -->
+    <div id="message-box">
+        <p id="message-text"></p>
+        <img id="message-image" src="" alt="Gambar Pesan">
+    </div>
 
     <script src="script.js"></script>
 </body>
+
+<footer>
+    <p>Made with 💙 by Ega Zakky Tampan</p>
+</footer>
+
 </html>
