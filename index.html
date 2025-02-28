@@ -3,39 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Habedeeee ya cil♡</title>
+    <title>Happy Birthday dini♡</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Background Video -->
     <video autoplay loop muted playsinline id="background-video">
         <source src="galaxy.mp4" type="video/mp4">
     </video>
 
-    <!-- Background Musik -->
+
+    
     <audio id="bg-music">
         <source src="The 1975 - About You.mp3" type="audio/mp3">
     </audio>
 
     <div class="container">
         <h1 class="title">💫Happy Birthday💫</h1>
-        <button id="play-music">Klik ini dulu, abistu klik bintang yg kiri yaa!</button>
+        <button id="play-music" class="glowing-button">Klik ini dulu, habis itu klik bintang yg kiri yaa!</button>
+        <div id="record-disc"></div>
     </div>
 
-    <!-- Langit malam dengan bintang -->
     <div class="sky">
-        <div class="star" data-message="Haii bocill Barakallahu fi umrik!, selamat ulang tahun yg ke 18 yaa, yeee udah gak bocil lagi nih whahahwh, moga aja di usia yg agak lebih serius ini Allah selalu memberikan kesehatan, kebahagiaan dan kemudahan dalam setiap langkah mu yaa semangat.. oiya kmu kan lgi mau pengumuman snpb ya, semoga ke terima yaa. apapun hasilnya itu adalah yg terbaik dari allah. ttp semangat dan jgn pernah berhenti percaya pada dirimu sendiri yakk, habedeeeeee18181818 - lanjut klik yg tengah cil"></div>
-        <div class="star" data-message="Ehh ketemu lagi dong whahah, aku lupa deh mo ngasih tau.. semoga di umur 18 ini kalau ketemu aku ngga banyak diemnya lagi yaa hahah, aku lo ngga gigit... okeh cerewey aja udah cerewet hahaha ngga2 becanda, kurang2 in lah ya diemnya.. kmu lo lucu kalau banyak omong lwdbhhgbdhbwdhbahebdhabd  - lanjutt kanan terakhir cisss dulu cekrek" ></div>
-        <div class="star" data-message="oiya mo ngasih tau, aku bikin ini ntah apa lah yg ada dipikiran aku tiba2 aja pengen ngasih yg beda gitu, maap ya kalau cape pencet2 bintangnya trus heeheh, tpi urusan novel bisa di atur kok, (asal kesini hahaha), soalnya aku blum tau deh kapan ya aku bisa main ke maakassar huhuhu.. alaa pokoknya hbd ya maap kalau baru bisa ngasih ini :(((()))), ak kgn km tw" "></div>
+        <div class="star" data-message="Haii bocill Barakallahu fi umrik!, selamat ulang tahun yg ke 18 yaa, yeee udah gak bocil lagi nih whahahwh, moga aja di usia yg agak lebih serius ini Allah selalu memberikan kesehatan, kebahagiaan dan kemudahan dalam setiap langkah mu yaa semangat.. oiya kmu kan lgi mau pengumuman snbp ya, semoga ke terima yaa. apapun hasilnya itu adalah yg terbaik dari allah. ttp semangat dan jgn pernah berhenti percaya pada dirimu sendiri yakk, habedeeeeee18181818 - lanjut klik yg tengah" id="star-left"></div>
+        <div class="star" data-message="Ehh ketemu lagi dong whahah, aku lupa deh mo ngasih tau.. semoga di umur 18 ini kalau ketemu aku ngga banyak diemnya lagi yaa hahah, aku lo ngga gigit... okeh cerewey aja udah cerewet hahaha ngga2 becanda, kurang2 in lah ya diemnya.. kmu lo lucu kalau banyak omong lwdbhhgbdhbwdhbahebdhabd  - lanjutt kanan terakhir cisss dulu cekrek" id="star-middle"></div>
+        <div class="star" data-message="oiya mo ngasih tau, aku bikin ini ntah apa lah yg ada dipikiran aku tiba2 aja pengen ngasih yg beda gitu, maap ya kalau cape pencet2 bintangnya trus heeheh, tpi urusan novel bisa di atur kok, (asal kesini hahaha), soalnya aku blum tau deh kapan ya aku bisa main ke maakassar huhuhu.. alaa pokoknya hbd ya maap kalau baru bisa ngasih ini :(((()))), ak kgn km tw" id="star-right"></div>
     </div>
 
-    <!-- Kotak pesan -->
     <div id="message-box">
         <p id="message-text"></p>
-        <img id="message-image" src="" alt="Gambar Pesan">
+        <img id="message-image" src="" alt="Gambar Pesan" style="display: none; width: 200px; margin-top: 10px;">
     </div>
 
+    <div id="fake-ending">
+        <h2>Makasih sudah melihat ini 🌙✨</h2>
+        <p>(Coba tekan bintang birunya..)</p>
+    </div>
+    
+    <div id="super-star" class="star" data-message="✨ Kejutan terakhir untukmu! ✨" data-image="blue.png"  style="display: none;"></div>
+    <div id="video-container" class="hidden">
+        <video id="surprise-video" controls>
+            <source src="vt.mp4" type="video/mp4">
+            Browser kamu tidak mendukung pemutaran video.
+        </video>
+        <button id="close-video">Tutup</button>
+    </div>
     <script src="script.js"></script>
 </body>
 

@@ -5,7 +5,15 @@ document.addEventListener("DOMContentLoaded", function () {
     const messageImage = document.getElementById("message-image"); // Elemen gambar
     const bgMusic = document.getElementById("bg-music");
     const playMusicBtn = document.getElementById("play-music");
-
+    const fakeEnding = document.getElementById("fake-ending");
+    const superStar = document.getElementById("super-star");
+    const videoContainer = document.getElementById("video-container");
+    const surpriseVideo = document.getElementById("surprise-video");
+    const closeVideoBtn = document.getElementById("close-video");
+    
+    let clickedStars = 0;
+    const totalStars = stars.length;
+    
     // Menentukan sumber musik dan memuatnya
     bgMusic.src = "The 1975 - About You.mp3"; // Pastikan file ada di lokasi yang benar
     bgMusic.load();
@@ -16,6 +24,11 @@ document.addEventListener("DOMContentLoaded", function () {
             const message = this.getAttribute("data-message");
             const imageSrc = this.getAttribute("data-image"); // Ambil gambar dari atribut
             showMessage(message, imageSrc, this);
+            
+            clickedStars++;
+            if (clickedStars === totalStars) {
+                setTimeout(triggerFakeEnding, 20000); // Fake Ending muncul setelah semua bintang diklik
+            }
         });
     });
 
@@ -35,7 +48,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         setTimeout(() => {
             messageBox.style.display = "none";
-        }, 20000);
+        }, 30000);
 
         // Efek animasi bintang dikembalikan seperti sebelumnya
         starElement.style.transform = "scale(2)";
@@ -46,27 +59,43 @@ document.addEventListener("DOMContentLoaded", function () {
         }, 500);
     }
 
+    // Fake Ending muncul
+    function triggerFakeEnding() {
+        document.body.style.filter = "brightness(30%)";
+        fakeEnding.style.display = "block";
+        superStar.style.display = "block";
+    }
+
+    // Klik Super Star untuk kejutan terakhir
+    superStar.addEventListener("click", function () {
+        document.body.style.filter = "brightness(100%)";
+        fakeEnding.style.display = "none";
+        
+        // Tampilkan video kejutan
+        videoContainer.style.display = "block";
+        surpriseVideo.play();
+    });
+
+    // Tombol untuk menutup video
+    closeVideoBtn.addEventListener("click", function () {
+        surpriseVideo.pause();
+        surpriseVideo.currentTime = 0;
+        videoContainer.style.display = "none";
+    });
+
     // Memainkan musik saat tombol diklik
     playMusicBtn.addEventListener("click", function () {
         bgMusic.play().then(() => {
             playMusicBtn.style.display = "none"; // Sembunyikan tombol setelah dipencet
+            document.getElementById("record-disc").style.display = "block"; // Munculkan vinyl
         }).catch(error => {
             console.error("Gagal memutar musik:", error);
         });
     });
 
     // Fungsi untuk membuat efek bintang jatuh
-    function createShootingStar() {
-        const star = document.createElement("div");
-        star.classList.add("shooting-star");
-        star.style.left = `${Math.random() * 100}vw`;
-        document.body.appendChild(star);
-        
-        setTimeout(() => {
-            star.remove();
-        }, 1500);
+    function getRandomColor() {
+        const colors = ["#ff0000", "#ff7300", "#ffeb00", "#00ff00", "#007bff", "#6f00ff", "#ff00ff"];
+        return colors[Math.floor(Math.random() * colors.length)];
     }
-
-    // Interval untuk efek bintang jatuh setiap 1 detik
-    setInterval(createShootingStar, 1000);
 });
